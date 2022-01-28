@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="run">
+    <Background
+      :typeJustifyContent="
+        valueMenuMobile ? 'flex-start' : 'space-between'
+      "
+      :removeBackgroundImage="valueMenuMobile"
+    >
+    </Background>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Background from './components/Background/Background.vue';
+  
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Background
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ * {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  :root {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-gray: hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%);
+  }
+
+  @font-face {
+    font-family: Alata;
+    src: url(./fonts/alata/Alata-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: "Josefin Sans";
+    src: url(./fonts/josefin-sans/static/JosefinSans-Light.ttf);
+  }
+
+  div#run {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 </style>
