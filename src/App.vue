@@ -1,22 +1,42 @@
 <template>
   <div id="run">
+    
     <Background
       :typeJustifyContent="
         valueMenuMobile ? 'flex-start' : 'space-between'
       "
       :removeBackgroundImage="valueMenuMobile"
     >
+    
+    <Vanta></Vanta>
+      <MessageText
+        v-show="!valueMenuMobile"
+      >
+        IMMERSIVE EXPERIENCES THAT DELIVER
+      </MessageText> 
+      
+      
     </Background>
+    
+    <Footer 
+      v-show="!valueMenuMobile"
+    />
   </div>
 </template>
 
 <script>
 import Background from './components/Background/Background.vue';
-  
+import Footer from './components/Footer/Footer.vue';  
+import MessageText from './components/MessageText/MessageText.vue';
+import Vanta from  './components/Vanta/Vanta.vue';
+
 export default {
   name: 'App',
   components: {
-    Background
+    Background,
+    Vanta,
+    MessageText,
+    Footer
   }
 }
 </script>
